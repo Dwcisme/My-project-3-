@@ -7,6 +7,8 @@ public class NoteSpawn : MonoBehaviour
     private float timer;
     private string[] randomPositions = new string[3];
     public float noteCollumn;
+    public float noteSlot = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +31,7 @@ public class NoteSpawn : MonoBehaviour
     public void SpawnNote()
     {
         noteCollumn = UnityEngine.Random.Range(1,5);
+        noteSlot +=1 ;
         Instantiate(Note, new Vector3((noteCollumn-1)*1.5f-2.25f,transform.position.y,0), transform.rotation);
     }
 }
